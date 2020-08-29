@@ -1,6 +1,5 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
-
-
 
 class FirstScreen extends StatelessWidget{
   @override
@@ -9,12 +8,20 @@ class FirstScreen extends StatelessWidget{
       color: Colors.blue,
       child:Center(
           child: Text(
-            'Hello Flutter',
+            GenrateLuckeyNum(),
             textDirection: TextDirection.ltr,
             style: TextStyle(fontSize: 50, color:Colors.white),
           )
       ) ,
     );
   }
+
+  String GenrateLuckeyNum(){
+    var random = Random();
+    int Num = random.nextInt(10);
+    return 'My Lucky Number is $Num';
+
+  }
+
 
 }
