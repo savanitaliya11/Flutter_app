@@ -10,16 +10,21 @@ void main(){
   runApp(
     MaterialApp(
       title: 'Flutter Applicaion',
-      home: Material(
-        color: Colors.deepOrange,
-        child:Center(
-            child: Text(
-              'Hello Flutter',
-              textDirection: TextDirection.ltr,
-              style: TextStyle(fontSize: 18, color:Colors.green),
-            )
-        ) ,
-      ),
+      home: Scaffold(
+        appBar: AppBar(title: Text('My Flutter App'),),
+        body: Material(
+          color: Colors.blue,
+          child:Center(
+              child: Text(
+                'Hello Flutter',
+                textDirection: TextDirection.ltr,
+                style: TextStyle(fontSize: 50, color:Colors.white),
+              )
+          ) ,
+        ),
+      )
+
+
 
     )
 
