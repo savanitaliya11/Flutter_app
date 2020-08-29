@@ -7,5 +7,23 @@ void main(){
   //Purpose: Inflate the widget and attach to the screen.
   //runApp:shows whatever we pass in parameter.
   //Center and Text are widget.
-  runApp(Text('Hello Flutter',textDirection: TextDirection.ltr,));
+  runApp(
+    MaterialApp(
+      title: 'Flutter Applicaion',
+      home: Material(
+        color: Colors.deepOrange,
+        child:Center(
+            child: Text(
+              'Hello Flutter',
+              textDirection: TextDirection.ltr,
+            )
+        ) ,
+      ),
+
+    )
+
+
+
+
+  );
 }
