@@ -16,6 +16,7 @@ void main(){
             child: Text(
               'Hello Flutter',
               textDirection: TextDirection.ltr,
+              style: TextStyle(fontSize: 18, color:Colors.green),
             )
         ) ,
       ),
