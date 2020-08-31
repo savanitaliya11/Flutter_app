@@ -33,12 +33,26 @@ class FlutterApplication extends StatelessWidget{
 */
 
 //Container widget
-void main(){
-  runApp(
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
+void main() {
+  runApp(MaterialApp(
+    // themeMode: ThemeMode.system,
+    // theme: ThemeData(
+    //   accentColor: Colors.red,
+    //   appBarTheme: AppBarTheme(
+    //     color: Colors.red
+    //   )
+    //
+    // ),
+    // darkTheme: ThemeData(
+    //     appBarTheme: AppBarTheme(
+    //         color: Colors.green
+    //     )
+    //
+    // ),
+    debugShowCheckedModeBanner: false,
     title: 'Conatiner app',
     home: Home(),
-  )
-  );
+  ));
 }
+
+

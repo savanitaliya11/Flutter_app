@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../main.dart';
@@ -13,7 +15,7 @@ class Home extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          padding: EdgeInsets.only(left: 10,  top: 10, right: 60),
+            padding: EdgeInsets.only(left: 10, top: 10, right: 60),
             alignment: Alignment.center,
 
             // width: 200.0,
@@ -22,13 +24,13 @@ class Home extends StatelessWidget {
             //margin: EdgeInsets.only(left: 20,right: 20, top: 20, bottom: 20),
             //padding: EdgeInsets.all(10),
             //padding: EdgeInsets.only(left: 15, right: 15, top: 15, bottom: 15),
-            child:Column(
+            child: Column(
               children: [
                 Row(
                   children: [
 
                     Expanded(child: Text(
-                      'Hybrid',
+                      'Canada',
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                           decoration: TextDecoration.none,
@@ -41,7 +43,7 @@ class Home extends StatelessWidget {
                     )),
 
                     Expanded(child: Text(
-                      'Flutter',
+                      'ABC',
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                           decoration: TextDecoration.none,
@@ -58,7 +60,7 @@ class Home extends StatelessWidget {
                   children: [
 
                     Expanded(child: Text(
-                      'Hybrid',
+                      'Germany',
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                           decoration: TextDecoration.none,
@@ -70,7 +72,7 @@ class Home extends StatelessWidget {
                     )),
 
                     Expanded(child: Text(
-                      'Flutter',
+                      'XYZ',
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
                           decoration: TextDecoration.none,
@@ -84,24 +86,66 @@ class Home extends StatelessWidget {
                   ],
                 ),
 
-                FlutterImageAsset()
+                FlutterImageAsset(),
+                FlightBookButton()
               ],
             )
 
 
-           ),
+        ),
       ),
     );
   }
 }
 
 class FlutterImageAsset extends StatelessWidget {
-@override
-Widget build(BuildContext context) {
-  AssetImage assetImage = AssetImage('images/flutter.png');
-  Image image = Image(image: assetImage,);
-  return Container(
-    child: image,
-  );
+  @override
+  Widget build(BuildContext context) {
+    AssetImage assetImage = AssetImage('images/ticket.png');
+    Image image = Image(image: assetImage,);
+    return Container(
+      child: image,
+    );
+  }
+}
+
+class FlightBookButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: 30.0, left: 20.0),
+      height: 40.0,
+      width: 150.0,
+      child: RaisedButton(
+        color: Colors.blue,
+        onPressed: () {
+              bookFlight(context);
+        },
+        elevation: 10.0,
+        child: Text('Book Flight',
+        style:TextStyle(
+          color: Colors.black87,
+          fontSize:15.0,
+        ) ,
+        ),
+      ),
+    );
+
+  }
+
+void bookFlight(BuildContext context){
+    var alertDialog = AlertDialog(
+      title: Text(
+        'Flight booked sucessfully'
+      ),
+      content: Text(
+        'Have a pleasent flight'
+      ),
+    );
+    showDialog(context: context,
+    builder: (BuildContext context){
+        return alertDialog;
+    }
+    );
 }
 }
